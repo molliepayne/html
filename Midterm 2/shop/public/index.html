@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Shopping Interface</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1> Shopping Interface</h1>
+    <h1>Current Products</h1>
+    <ul>
+        <li v-for="product in products">
+          <input :id="product._id" type=checkbox :value="product._id" v-model="shoppingCart"> <label :for="product._id">{{product.name}} - ${{product.price}} <a :href="product.URL"><img class="productPic"  v-bind:src="product.URL" /></a> </label>
+      </li>
+    </ul>
+     <button class="userInputButton" @click="makePurchase()">Submit Purchase</button>
+    <div v-if="purchased" class="results">
+      <h1>Shopping Cart</h1>
+      <ul>
+        <li v-for="product in purchases">
+          {{product.name}} - ${{product.price}} <a :href="product.URL"><img class="productPic" v-bind:src="product.URL" /></a> <hr>
+      </li>
+    </div>
+  </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>

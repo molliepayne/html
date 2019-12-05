@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Store Management Interface</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1> Store Management Interface</h1>
+   
+     <form v-on:submit.prevent="addProduct">
+       <div class="container">
+         <div class="container userInput">
+        Product Name:<input type="text" v-model="newProdName"></div>
+         <div class="container userInput">Product Price:<input type="text" v-model="newProdPrice"></div>
+         <div class="container userInput">Picture URL: <input type="url" v-model="newProdPicURL"></div>
+       
+        <button type="submit">Add Product</button>
+        </div>
+    </form>    
+    <br>
+     <h1>Current Products</h1>
+     <ul>
+        <li v-for="product in products">
+          <span class="glyphicon glyphicon-remove" v-on:click="deleteProduct(product)"></span> {{product.name}} - ${{product.price}} - ordered {{product.purchases}} <a :href="product.URL"><img class="productPic" v-bind:src="product.URL" /></a> - 
+          <hr>
+      </li>
+    </ul>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>

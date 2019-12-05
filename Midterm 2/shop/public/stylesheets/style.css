@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+
+
+.userInputButton:hover {
+  background-color: darkgray; /* Green */
+  color: white;
+}
+
+.userInputButton{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.userInputButton:active {
+  background-color: pink;
+ 
+  transform: translateY(4px);
+}
+#checkboxes input{
+  display: inline-block;
+  margin-right: 10px;
+}
+#checkboxes label{
+  display: inline-block;
+}
+.productPic {
+    height: 150px;
+    max-width: 100%;
+}
+
+
+.userInput{
+
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+    height: 100%;
+}
