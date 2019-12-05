@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.userInputButton:hover {
+  background-color: darkgray; /* Green */
+  color: white;
+}
+
+.userInputButton{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.userInputButton:active {
+  background-color: pink;
+ 
+  transform: translateY(4px);
+}
+#checkboxes input{
+  display: inline-block;
+  margin-right: 10px;
+}
+#checkboxes label{
+  display: inline-block;
+}

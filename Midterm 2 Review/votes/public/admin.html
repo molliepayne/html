@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Admin Interface</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1> Admin Interface</h1>
+    <h1>Current Candidates</h1>
+     <form v-on:submit.prevent="addCandidate">
+        First Name:<input type="text" v-model="newCanFirstName">
+        Last Name:<input type="text" v-model="newCanLastName">
+       
+        <button type="submit">Add</button>
+    </form>    
+    <br>
+     <ul>
+        <li v-for="candidate in candidates">
+          <span class="glyphicon glyphicon-remove" v-on:click="deleteCandidate(candidate)"></span> {{candidate.first_name}} {{candidate.last_name}} - Votes: {{candidate.votes}}
+      </li>
+    </ul>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="javascripts/app.js"></script>
+</body>
+</html>
